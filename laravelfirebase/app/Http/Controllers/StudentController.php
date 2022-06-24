@@ -13,7 +13,8 @@ class StudentController extends Controller
     }
 
     function index(){
-        return view('Pages.student');
+        $studentData = $this->database->getReference($this->tablename)->getValue();
+        return view('Pages.student', compact('studentData') );
     }
 
     function addStudent(){
