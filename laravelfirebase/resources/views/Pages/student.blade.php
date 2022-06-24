@@ -4,6 +4,11 @@
 
     <div class="container m-5">
         <div class="row">
+
+            @if (session('status'))
+                <h3 class="alert alert-warning mb-2" > {{ session('status') }} </h3>
+            @endif
+
             <div class="col-md-8">
                 <table class="table able table-bordered table-striped">
                     <thead>
@@ -53,32 +58,35 @@
                         <h2>Add New Student</h2>
                     </div>
                     <div class="card-body">
-                        <form action="" method="post" id="createStudentForm">
+                        <form action="{{ url('/add-student') }}" method="post" id="createStudentForm">
+                            @csrf
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Student ID</label>
-                                <input type="text" class="form-control" id="studentID" >
+                                <input type="text" class="form-control" name="studentID" id="studentID" >
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Student Name</label>
-                                <input type="text" class="form-control" id="studentName" >
+                                <input type="text" class="form-control" name="studentName" id="studentName" >
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Father Name</label>
-                                <input type="text" class="form-control" id="studentFatherName">
+                                <input type="text" class="form-control" name="studentFatherName" id="studentFatherName">
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Class</label>
-                                <input type="text" class="form-control" id="studentClass" >
+                                <input type="text" class="form-control" name="studentClass" id="studentClass" >
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Roll</label>
-                                <input type="text" class="form-control" id="studentRoll" >
+                                <input type="text" class="form-control" name="studentRoll" id="studentRoll" >
+                            </div>
+
+                            <div class="form-group">
+                                <button id="addBtn" type="submit" name="addBtn" class="btn btn-primary">Add New Student</button>
                             </div>
                         </form>
                     </div>
-                    <div class="card-footer">
-                        <button id="addBtn" type="button" class="btn btn-primary btn-block">Add New Student</button>
-                    </div>
+                    
                 </div>
             </div>
         </div>

@@ -14,3 +14,5 @@ use App\Http\Controllers\StudentController;
 */
 
 Route::get('/', [StudentController::class, 'index']);
+Route::post('/add-student', [StudentController::class, 'addStudent']);
+Route::post('/add-student', [StudentController::class, 'store']);
