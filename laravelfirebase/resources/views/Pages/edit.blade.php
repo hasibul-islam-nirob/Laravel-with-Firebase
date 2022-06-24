@@ -38,7 +38,7 @@
 
                             <div class="form-group">
                                 <label for="exampleFormControlInput1"></label><br>
-                                <button id="updateBtn" type="submit" name="addBtn" class="btn btn-primary">Update Student</button>
+                                <button id="updateBtn" type="submit" name="addBtn" class="btn btn-primary">Update Student Information</button>
                                 <a href="/" id="updateBtn" type="submit" name="addBtn" class="btn btn-danger">Cancel</a>
 
                             </div>
